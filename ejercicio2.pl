@@ -10,5 +10,3 @@ padres(<nombre padre>,<nombre madre>,<nombre hijo>). Incluya datos de su propio
         b) ¿Cuáles son todos los nietos de cada persona?
     6) ¿Cuáles son los ascendientes de una persona? (se necesita recursividad). 
     minuto 40*/
-factorial(0,1).
-factorial(N,M):- N>0, X is N-1, factorial(X,Y), M is N*Y.
