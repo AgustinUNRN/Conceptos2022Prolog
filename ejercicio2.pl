@@ -34,8 +34,8 @@ abuelos(YO):-abuelosP(YO);abuelosM(YO). %///////////////////// Falta
 nietos(YO):- (padres(YO,PAREJA,HIJO);padres(PAREJA,YO,HIJO)),(padres(HIJO,PAREJAH,NIETO);padres(PAREJAH,HIJO,NIETO)).
 
 % 6) ¿Cuáles son los ascendientes de una persona? (se necesita recursividad). ///////////////////// Falta aprender recursividad
-
+%factorial(N,M):- N>0, X is N-1, factorial(X,Y), M is N*Y.
 ascendientes(YO) :- padres(PAPA,MAMA,YO).
-ascendientes(YO) :- (padres(YO,PAREJA,HIJO);padres(PAREJA,YO,HIJO)),ascendientes(PAPA,MAMA,YO).
+ascendientes(YO) :-(padres(YO,PAREJA,HIJO);padres(PAREJA,YO,HIJO)),ascendientes(PAPA,MAMA,YO).
 
 
