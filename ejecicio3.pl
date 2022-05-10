@@ -1,10 +1,5 @@
 /*Una empresa está buscando candidatos para varios de sus sectores. Con los requerimientos de cada sector, se arma
 este programa Prolog:*/
-/*1) proyectos: pueden andar ingenieros con experiencia y también abogados jóvenes.
-2) logística: pueden andar profesionales que o bien sean jóvenes o bien hayan trabajado en Omni.
-3) Agregar postulantestales que uno pueda andar para proyectos pero no para logística otro pueda andar para ventas
-pero no para contaduría.*/
-
 puedeAndar(logistica,P):- profesional(P), (joven(P);trabajoEn(P,omni)).
 puedeAndar(proyectos,P):- (ingeniero(P),conExperiencia(P));(abogado(P),joven(P)).
 puedeAndar(comercioExterior,P):- habla(P,ingles), habla(P,frances), profesional(P).
@@ -18,17 +13,21 @@ profesional(P):- abogado(P).
 profesional(P):- ingeniero(P).
 conExperiencia(P):- trabajoEn(P,_).
 
-contador(roque).
+joven(socrates).
 joven(roque).
-
 honesto(roque).
 
+contador(socrates).
+contador(roque).
 ingeniero(ana).
+ingeniero(juan).
 abogado(cecilia).
 
 trabajoEn(roque,acme).
 trabajoEn(ana,omni).
 trabajoEn(lucia,omni).
+trabajoEn(juan,carpinchoSA).
+trabajoEn(socrates,filosofia).
 
 habla(roque,frances).
 habla(ana,ingles).
@@ -36,7 +35,6 @@ habla(ana,frances).
 habla(lucia,ingles).
 habla(lucia,frances).
 habla(cecilia,frances).
-
 /*
 1) A partir de esta base indicar para cada una de estas consultas, pensar si la respuesta de Prolog va a ser "sí" o "no",
 justificando si es "no". Verificar después con el SWI Prolog.
@@ -55,9 +53,10 @@ justificando si es "no". Verificar después con el SWI Prolog.
 1) proyectos: pueden andar ingenieros con experiencia y también abogadosjóvenes.
 2) logística: pueden andar profesionales que o bien sean jóvenes o bien hayan trabajado en Omni.
 3) Agregar postulantestales que uno pueda andar para proyectos pero no para logística otro pueda andar para ventas
-pero no para contaduría.*/
-
-/*Falta el ultimo punto!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!
-!!!!!*/
+pero no para contaduría.
+	ingeniero(juan).
+	trabajoEn(juan,carpinchoSA).
+	joven(socrates).
+	contador(socrates).
+	trabajoEn(socrates,filosofia).
+*/
