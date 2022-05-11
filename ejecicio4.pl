@@ -10,3 +10,16 @@ Escribir un programa Prolog que modele a esta empresa, tal que puedan responders
 • Decimos que a puede darle órdenes a b si y sólo si trabajan en el mismo departamento y a tiene un cargo
 superior a b. Se considera que “empleado” es un cargo superior a “cadete”.
 */
+
+empleado(maria,ventas).
+empleado(nora,compras).
+empleado(felipe,administracion).
+empleado(hugo,administracion).
+cadete(juan,ventas).
+cadete(roque,ventas).
+cadete(pedro,compras).
+cadete(ana,administracion).
+
+departamento(X,Depto):-empleado(X,Depto);cadete(X,Depto).
+trabajanEn(X,Y,Depto):-departamento(X,Depto),departamento(Y,Depto).
+daOrdenes(X,Y,Depto):-trabajanEn(X,Y,Depto),empleado(X,Depto),cadete(Y,Depto).
