@@ -18,7 +18,9 @@ seleccion(japon,grupoB).
 seleccion(escocia,grupoB).
 
 
-rivales(X,G):- seleccion(Y,G),Y\=X.
+rivales(A):- seleccion(A,G), seleccion(S,G),S\=A. 
+
+%seleccion(argentina,G), seleccion(S,G),S\=argentina. 
 
 %esTierno(Persona):- persona(Persona), forall(leGusta(Persona, Alimento), esDulce(Alimento)).
 
