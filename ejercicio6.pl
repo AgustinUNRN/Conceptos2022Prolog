@@ -59,4 +59,4 @@ compatibilidad(M,V):-pareja(M,V),(decidido(M),melancolico(V);decidido(V),melanco
 /*Agregar al programa la posibilidad de responder a consultas sobre si una persona es deseable. Decimos que
 una persona (varón o mujer) es deseable si es compatible con, por lo menos, dos personas distintas. Según la
 información descripta, Juan es deseable mientras que Juana no lo es.*/
-deseable(P):-(compatibilidad(P,X);compatibilidad(X,P)),X\=P. %falta la recursibidad para que lo saque 2 veces
+deseable(P):-(compatibilidad(P,X);compatibilidad(X,P)),X\=P. %falta la recursibidad para que lo saque 2 veces y que las personas sean distintas xd
